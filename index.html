@@ -6,6 +6,13 @@
     <title>Mis Proyectos Web · Neumorfismo</title>
     <!-- Font Awesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mis Proyectos · Morado Profundo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <style>
         * {
             margin: 0;
@@ -19,7 +26,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, #d5c7e8 0%, #c8e6d9 100%);
+            background: #6c4a8c;
             padding: 2rem 1rem;
         }
 
@@ -27,12 +34,12 @@
         .container {
             max-width: 1200px;
             width: 100%;
-             background: linear-gradient(135deg, #d5c7e8 0%, #c8e6d9 100%);
+            background: #6c4a8c;
             border-radius: 60px;
             padding: 2.5rem 2rem;
             box-shadow: 
-                12px 12px 24px #b8bcc6,
-                -12px -12px 24px #ffffff;
+                12px 12px 24px #553a70,
+                -12px -12px 24px #835aa8;
             transition: all 0.2s ease;
         }
 
@@ -46,24 +53,24 @@
             font-size: 3.2rem;
             font-weight: 700;
             letter-spacing: -0.5px;
-            color: #2d2f36;
-            text-shadow: 2px 2px 4px #b8bcc6, -2px -2px 4px #ffffff;
+            color: #f0e6ff;
+            text-shadow: 2px 2px 4px #553a70, -2px -2px 4px #835aa8;
             display: inline-block;
             padding: 0 2rem 0.5rem;
             border-bottom: 4px solid transparent;
-            border-image: linear-gradient(135deg, #a3a8b3, #ffffff) 1;
+            border-image: linear-gradient(135deg, #835aa8, #f0e6ff) 1;
         }
 
         .header p {
             font-size: 1.25rem;
-            color: #4a4e57;
+            color: #e8d5ff;
             margin-top: 0.8rem;
             font-weight: 400;
-            background: #e0e5ec;
+            background: #6c4a8c;
             display: inline-block;
             padding: 0.5rem 2.5rem;
             border-radius: 50px;
-            box-shadow: inset 3px 3px 8px #b8bcc6, inset -3px -3px 8px #ffffff;
+            box-shadow: inset 3px 3px 8px #553a70, inset -3px -3px 8px #835aa8;
         }
 
         /* grid de tarjetas neumórficas */
@@ -76,14 +83,14 @@
 
         /* cada tarjeta - neumorfismo puro */
         .card {
-            background: rgba(224, 229, 236, 0.7);
+            background: #6c4a8c;
             border-radius: 48px;
             padding: 2.2rem 1.8rem 2.5rem;
             text-align: center;
             transition: all 0.25s cubic-bezier(0.2, 0.9, 0.4, 1);
             box-shadow: 
-                9px 9px 18px #b8bcc6,
-                -9px -9px 18px #ffffff;
+                9px 9px 18px #553a70,
+                -9px -9px 18px #835aa8;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -98,18 +105,18 @@
         /* efecto "presionado" al hacer hover (interacción neumórfica) */
         .card:hover {
             box-shadow: 
-                4px 4px 10px #b8bcc6,
-                -4px -4px 10px #ffffff,
-                inset 2px 2px 6px #b8bcc6,
-                inset -2px -2px 6px #ffffff;
+                4px 4px 10px #553a70,
+                -4px -4px 10px #835aa8,
+                inset 2px 2px 6px #553a70,
+                inset -2px -2px 6px #835aa8;
             transform: scale(0.98);
         }
 
         /* y un efecto sutil al hacer click (activo) */
         .card:active {
             box-shadow: 
-                inset 6px 6px 14px #b8bcc6,
-                inset -6px -6px 14px #ffffff;
+                inset 6px 6px 14px #553a70,
+                inset -6px -6px 14px #835aa8;
             transform: scale(0.95);
         }
 
@@ -118,40 +125,40 @@
             width: 90px;
             height: 90px;
             border-radius: 50%;
-            background: #e0e5ec;
+            background: #6c4a8c;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 2.8rem;
-            color: #2d2f36;
+            color: #f0e6ff;
             margin-bottom: 1.5rem;
             box-shadow: 
-                6px 6px 14px #b8bcc6,
-                -6px -6px 14px #ffffff,
-                inset 1px 1px 2px #ffffff,
-                inset -1px -1px 2px #b8bcc6;
+                6px 6px 14px #553a70,
+                -6px -6px 14px #835aa8,
+                inset 1px 1px 2px #835aa8,
+                inset -1px -1px 2px #553a70;
             transition: all 0.2s;
         }
 
         .card:hover .card-icon {
             box-shadow: 
-                3px 3px 8px #b8bcc6,
-                -3px -3px 8px #ffffff,
-                inset 3px 3px 8px #b8bcc6,
-                inset -3px -3px 8px #ffffff;
+                3px 3px 8px #553a70,
+                -3px -3px 8px #835aa8,
+                inset 3px 3px 8px #553a70,
+                inset -3px -3px 8px #835aa8;
         }
 
         .card h3 {
             font-size: 1.7rem;
             font-weight: 600;
-            color: #1e2025;
+            color: #f5ecff;
             margin-bottom: 0.4rem;
             letter-spacing: -0.3px;
         }
 
         .card p {
             font-size: 1rem;
-            color: #4f535e;
+            color: #d4c4e8;
             margin: 0.3rem 0 1rem;
             line-height: 1.4;
             font-weight: 400;
@@ -159,20 +166,20 @@
 
         .card .badge {
             display: inline-block;
-            background: #e0e5ec;
+            background: #6c4a8c;
             padding: 0.4rem 1.6rem;
             border-radius: 40px;
             font-size: 0.85rem;
             font-weight: 600;
-            color: #2d2f36;
+            color: #f0e6ff;
             letter-spacing: 0.3px;
             margin-top: 0.2rem;
-            box-shadow: inset 2px 2px 5px #b8bcc6, inset -2px -2px 5px #ffffff;
+            box-shadow: inset 2px 2px 5px #553a70, inset -2px -2px 5px #835aa8;
             transition: 0.2s;
         }
 
         .card:hover .badge {
-            box-shadow: inset 1px 1px 3px #b8bcc6, inset -1px -1px 3px #ffffff;
+            box-shadow: inset 1px 1px 3px #553a70, inset -1px -1px 3px #835aa8;
         }
 
         /* pie de página con diseño neumórfico */
@@ -183,16 +190,16 @@
             flex-wrap: wrap;
             gap: 1.5rem 2.5rem;
             padding-top: 2rem;
-            border-top: 2px solid rgba(184, 188, 198, 0.3);
+            border-top: 2px solid rgba(131, 90, 168, 0.3);
         }
 
         .footer-item {
-            background: #e0e5ec;
+            background: #6c4a8c;
             padding: 0.7rem 2rem;
             border-radius: 60px;
-            box-shadow: 4px 4px 10px #b8bcc6, -4px -4px 10px #ffffff;
+            box-shadow: 4px 4px 10px #553a70, -4px -4px 10px #835aa8;
             font-weight: 500;
-            color: #2d2f36;
+            color: #f0e6ff;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -202,17 +209,17 @@
 
         .footer-item i {
             font-size: 1.2rem;
-            color: #3d414b;
+            color: #e8d5ff;
         }
 
         .footer-item:hover {
-            box-shadow: inset 4px 4px 10px #b8bcc6, inset -4px -4px 10px #ffffff;
+            box-shadow: inset 4px 4px 10px #553a70, inset -4px -4px 10px #835aa8;
             transform: scale(0.97);
         }
 
         .footer a {
             text-decoration: none;
-            color: #2d2f36;
+            color: #f0e6ff;
         }
 
         /* responsivo */
@@ -240,6 +247,124 @@
             display: contents;
         }
     </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Encabezado -->
+    <div class="header">
+        <h1>✦ Mis Proyectos</h1>
+        <p><i class="fas fa-cube" style="margin-right: 10px;"></i>  neumorfismo · morado profundo</p>
+    </div>
+
+    <!-- Grid de tarjetas -->
+    <div class="card-grid">
+
+        <!-- TARJETA 1 -->
+        <a href="#" class="card-link" target="_blank">
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-globe-americas"></i>
+                </div>
+                <h3>WebStudio</h3>
+                <p>Landing creativa para agencias</p>
+                <span class="badge">➜ Visitar</span>
+            </div>
+        </a>
+
+        <!-- TARJETA 2 -->
+        <a href="#" class="card-link" target="_blank">
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-store"></i>
+                </div>
+                <h3>MarketPro</h3>
+                <p>E-commerce minimalista</p>
+                <span class="badge">➜ Visitar</span>
+            </div>
+        </a>
+
+        <!-- TARJETA 3 -->
+        <a href="#" class="card-link" target="_blank">
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-blog"></i>
+                </div>
+                <h3>BlogNova</h3>
+                <p>Magazine digital con estilo</p>
+                <span class="badge">➜ Visitar</span>
+            </div>
+        </a>
+
+        <!-- TARJETA 4 -->
+        <a href="#" class="card-link" target="_blank">
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3>DevPortfolio</h3>
+                <p>Portafolio para desarrolladores</p>
+                <span class="badge">➜ Visitar</span>
+            </div>
+        </a>
+
+        <!-- TARJETA 5 -->
+        <a href="#" class="card-link" target="_blank">
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <h3>ArtGallery</h3>
+                <p>Exposición de arte digital</p>
+                <span class="badge">➜ Visitar</span>
+            </div>
+        </a>
+
+        <!-- TARJETA 6 -->
+        <a href="#" class="card-link" target="_blank">
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fas fa-camera"></i>
+                </div>
+                <h3>FotoFrame</h3>
+                <p>Galería de fotografía</p>
+                <span class="badge">➜ Visitar</span>
+            </div>
+        </a>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-item">
+            <i class="fas fa-layer-group"></i> 6 proyectos activos
+        </div>
+        <div class="footer-item">
+            <i class="fas fa-sync-alt"></i> actualización constante
+        </div>
+        <a href="#" style="text-decoration: none;">
+            <div class="footer-item">
+                <i class="fas fa-plus-circle"></i> ver todos
+            </div>
+        </a>
+    </div>
+
+</div>
+
+<script>
+    document.querySelectorAll('.card-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+            if (link.getAttribute('href') === '#') {
+                e.preventDefault();
+                alert('🔗 Aquí iría tu página web. Cambia el href por tu URL.');
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
 </head>
 <body>
 
