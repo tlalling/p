@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Restaurante · Experiencia gastronómica</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background: #faf6f0;
+            color: #1e1e1e;
+        }
+
+        /* HEADER */
+        .header {
+            background: #1a1a1a;
+            color: #f5e7d9;
+            padding: 1rem 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 4px solid #c49a6c;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        .logo h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+        .logo span {
+            color: #c49a6c;
+        }
+        .nav-icons {
+            display: flex;
+            gap: 1.8rem;
+            font-size: 1.3rem;
+        }
+        .nav-icons a {
+            color: #f5e7d9;
+            transition: 0.2s;
+            text-decoration: none;
+        }
+        .nav-icons a:hover {
+            color: #c49a6c;
+            transform: scale(1.1);
+        }
+
+        /* HERO - ANUNCIO PRINCIPAL */
+        .hero {
+            position: relative;
+            width: 100%;
+            max-height: 650px;
+            overflow: hidden;
+        }
+        .hero img {
+            width: 100%;
+            height: auto;
+            max-height: 650px;
+            object-fit: cover;
+            display: block;
+        }
+        .hero-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2.5rem 2rem;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+            color: white;
+        }
+        .hero-overlay h2 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+        .hero-overlay p {
+            font-size: 1.4rem;
+            opacity: 0.9;
+            font-weight: 300;
+            max-width: 600px;
+        }
+        .hero-overlay .btn-cta {
+            display: inline-block;
+            margin-top: 1rem;
+            background: #c49a6c;
+            color: #1a1a1a;
+            padding: 0.8rem 2.5rem;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: 0.3s;
+            border: 2px solid transparent;
+        }
+        .hero-overlay .btn-cta:hover {
+            background: transparent;
+            color: #c49a6c;
+            border-color: #c49a6c;
+            transform: scale(1.02);
+        }
+
+        /* ANUNCIO DESTACADO - BANNER GRANDE */
+        .featured-banner {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            padding: 2rem 1.5rem;
+            background: #1a1a1a;
+            justify-content: center;
+            border-bottom: 3px solid #c49a6c;
+        }
+        .featured-banner .banner-item {
+            flex: 1 1 280px;
+            max-width: 380px;
+            border-radius: 24px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+            transition: 0.3s;
+        }
+        .featured-banner .banner-item:hover {
+            transform: translateY(-6px);
+        }
+        .featured-banner .banner-item img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            display: block;
+        }
+        .featured-banner .banner-text {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem 1.2rem;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: white;
+        }
+        .featured-banner .banner-text h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+        .featured-banner .banner-text p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        .featured-banner .banner-text .tag {
+            display: inline-block;
+            background: #c49a6c;
+            color: #1a1a1a;
+            padding: 0.2rem 1rem;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 0.75rem;
+            margin-top: 0.3rem;
+            letter-spacing: 1px;
+        }
+
+        /* SECCIÓN "NUESTROS PLATOS" - SOLO IMÁGENES Y DESCRIPCIÓN */
+        .section-title {
+            font-size: 2.4rem;
+            font-weight: 300;
+            padding: 2rem 1.5rem 0.5rem 2.5rem;
+            border-left: 8px solid #c49a6c;
+            margin: 1.5rem 0 0 1.5rem;
+            color: #1a1a1a;
+        }
+        .section-title i {
+            color: #c49a6c;
+            margin-right: 0.8rem;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 2rem;
+            padding: 1.5rem 2rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+            transition: 0.3s;
+            border: 1px solid #eee3d9;
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 35px rgba(0, 0, 0, 0.12);
+            border-color: #c49a6c;
+        }
+        .product-img {
+            height: 230px;
+            width: 100%;
+            overflow: hidden;
+            background: #e8dfd6;
+        }
+        .product-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.4s;
+        }
+        .product-card:hover .product-img img {
+            transform: scale(1.05);
+        }
+        .product-info {
+            padding: 1rem 1.2rem 1.5rem;
+            text-align: center;
+        }
+        .product-info h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+        .product-info .product-desc {
+            color: #5f5f5f;
+            font-size: 0.95rem;
+            margin: 0.4rem 0;
+        }
+        .product-info .highlight {
+            display: inline-block;
+            background: #c49a6c20;
+            color: #c49a6c;
+            padding: 0.2rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            border: 1px solid #c49a6c40;
+            margin-top: 0.3rem;
+        }
+        /* SIN PRECIOS - solo mensaje */
+        .product-info .sin-precio {
+            font-size: 0.9rem;
+            color: #888;
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+
+        /* BANNER PROMOCIONAL GRANDE */
+        .promo-full {
+            background: #1a1a1a;
+            padding: 0;
+            margin: 2rem 1.5rem;
+            border-radius: 32px;
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            border: 2px solid #c49a6c;
+        }
+        .promo-full img {
+            flex: 1 1 300px;
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+        }
+        .promo-full .promo-text {
+            flex: 1 1 300px;
+            padding: 2rem 2.5rem;
+            color: #f5e7d9;
+        }
+        .promo-full .promo-text h2 {
+            font-size: 2.6rem;
+            font-weight: 700;
+            color: #c49a6c;
+        }
+        .promo-full .promo-text p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin: 0.5rem 0 1rem;
+        }
+        .promo-full .promo-text .btn-outline {
+            display: inline-block;
+            padding: 0.7rem 2rem;
+            border: 2px solid #c49a6c;
+            color: #c49a6c;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+        .promo-full .promo-text .btn-outline:hover {
+            background: #c49a6c;
+            color: #1a1a1a;
+        }
+
+        /* GALERÍA DE AMBIENTE (más imágenes) */
+        .gallery-spotlight {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            padding: 1.5rem 2rem;
+            background: #f5ede4;
+            justify-content: center;
+            border-top: 2px solid #c49a6c;
+            border-bottom: 2px solid #c49a6c;
+        }
+        .gallery-spotlight img {
+            flex: 1 1 180px;
+            max-width: 280px;
+            height: 190px;
+            object-fit: cover;
+            border-radius: 24px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+            border: 3px solid white;
+        }
+        .gallery-spotlight img:hover {
+            transform: scale(1.03);
+            border-color: #c49a6c;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: #1a1a1a;
+            color: #c9b9a8;
+            padding: 2.5rem 2rem 1.5rem;
+            margin-top: 2rem;
+            border-top: 4px solid #c49a6c;
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+        .footer h4 {
+            color: #c49a6c;
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+        .footer p,
+        .footer a {
+            color: #c9b9a8;
+            text-decoration: none;
+            line-height: 1.6;
+        }
+        .footer a:hover {
+            color: #c49a6c;
+        }
+        .footer .social i {
+            font-size: 1.8rem;
+            margin-right: 1rem;
+            transition: 0.2s;
+        }
+        .footer .social i:hover {
+            color: #c49a6c;
+            transform: translateY(-4px);
+        }
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid #3a2f28;
+            padding-top: 1.5rem;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 650px) {
+            .header {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: center;
+                text-align: center;
+            }
+            .nav-icons {
+                gap: 1.2rem;
+            }
+            .hero-overlay h2 {
+                font-size: 2rem;
+            }
+            .hero-overlay p {
+                font-size: 1rem;
+            }
+            .section-title {
+                font-size: 1.6rem;
+                margin-left: 0.5rem;
+                padding-left: 0.8rem;
+            }
+            .product-grid {
+                padding: 1rem;
+                gap: 1.2rem;
+                grid-template-columns: 1fr 1fr;
+            }
+            .promo-full .promo-text h2 {
+                font-size: 1.8rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+            .featured-banner .banner-item {
+                flex: 1 1 100%;
+                max-width: 100%;
+            }
+            .gallery-spotlight img {
+                max-width: 100%;
+                height: 160px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="logo">
+            <h1><i class="fas fa-utensils" style="color: #c49a6c;"></i> <span>Sabores</span>delMundo</h1>
+        </div>
+        <div class="nav-icons">
+            <a href="#"><i class="fas fa-search"></i></a>
+        </div>
+    </header>
+
+    <!-- HERO - ANUNCIO PRINCIPAL con overlay -->
+    <section class="hero">
+        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1400&q=80" alt="Plato principal" />
+        <div class="hero-overlay">
+            <h2> Sabores que enamoran</h2>
+            <p>Cocina de autor con ingredientes frescos y pasión por el buen comer.</p>
+            
+        </div>
+    </section>
+
+    <!-- BANNER DE ANUNCIOS DESTACADOS (3 imágenes con texto) -->
+    <div class="featured-banner">
+        <div class="banner-item">
+            <img src="https://images.unsplash.com/photo-1559314809-0d155014e29e?w=600&q=80" alt="Risotto" />
+            <div class="banner-text">
+                <h3>Noche de Risotto</h3>
+                <p>Trufa negra y parmesano añejo</p>
+                <span class="tag">🔥 Reserva tu mesa</span>
+            </div>
+        </div>
+        <div class="banner-item">
+            <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=600&q=80" alt="Salmón" />
+            <div class="banner-text">
+                <h3>Salmón del Pacífico</h3>
+                <p>Glaseado con miel y jengibre</p>
+                <span class="tag">✨ Edición limitada</span>
+            </div>
+        </div>
+        <div class="banner-item">
+            <img src="https://images.unsplash.com/photo-1547573854-74d2a71d0826?w=600&q=80" alt="Ensalada" />
+            <div class="banner-text">
+                <h3>Menú Saludable</h3>
+                <p>Ensaladas y bowls nutritivos</p>
+                <span class="tag">🥗 Para llevar</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- SECCIÓN "NUESTROS PLATOS" - sin precios, solo promoción -->
+    <h2 class="section-title"><i class="fas fa-star"></i> Platos estrella</h2>
+
+    <section class="product-grid">
+        <div class="product-card">
+            <div class="product-img"><img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&q=80" alt="Pasta" /></div>
+            <div class="product-info">
+                <h3>Pasta al Pesto</h3>
+                <div class="product-desc">Albahaca fresca, piñones, parmesano</div>
+                <span class="highlight">🌿 Clásico italiano</span>
+                <div class="sin-precio">— Pregunta por nuestra selección —</div>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-img"><img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=600&q=80" alt="Salmón" /></div>
+            <div class="product-info">
+                <h3>Salmón Glaseado</h3>
+                <div class="product-desc">Sésamo, jengibre, salsa de soja</div>
+                <span class="highlight">🐟 Del mar a tu mesa</span>
+                <div class="sin-precio">— Consulta disponibilidad —</div>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-img"><img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=600&q=80" alt="Hamburguesa" /></div>
+            <div class="product-info">
+                <h3>Burger Angus</h3>
+                <div class="product-desc">Cheddar, cebolla caramelizada, bacon</div>
+                <span class="highlight">🍔 Gourmet</span>
+                <div class="sin-precio">— Ideal para compartir —</div>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="product-img"><img src="https://images.unsplash.com/photo-1559314809-0d155014e29e?w=600&q=80" alt="Risotto" /></div>
+            <div class="product-info">
+                <h3>Risotto de Hongos</h3>
+                <div class="product-desc">Trufa, vino blanco, parmesano</div>
+                <span class="highlight">🍄 Temporada</span>
+                <div class="sin-precio">— Pregunta por maridaje —</div>
+            </div>
+        </div>
+   
+    </section>
+
+    <!-- BANNER PROMOCIONAL GRANDE (mitad imagen, mitad texto) -->
+    <div class="promo-full">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80" alt="Plato gourmet" />
+        <div class="promo-text">
+            <h2>🍷 Cenas con encanto</h2>
+            <p>Vive una experiencia única con nuestro menú degustación de 5 tiempos, maridaje incluido.</p>
+            <p>Reserva ya al +52 0000000000.</p>
+            
+        </div>
+    </div>
+
+    <!-- GALERÍA DE AMBIENTE (más imágenes grandes) -->
+    <div class="gallery-spotlight">
+        <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&q=80" alt="Postre" />
+        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&q=80" alt="Bebida" />
+        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=80" alt="Comida variada" />
+        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80" alt="Ambiente" />
+        <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=600&q=80" alt="Restaurante" />
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <h4><i class="fas fa-utensils" style="color:#c49a6c;"></i> Sabores del Mundo</h4>
+                <p>Un ejemplo de una pagina creada para publicitar un restaurante ficticio</p>
+                <p><i class="fas fa-map-pin"></i> Av/p>
+                <p><i class="fas fa-phone-alt"></i> +52 0000000000</p>
+            </div>
+            <div>
+                <h4>Horario</h4>
+                <p>Lun–Jue: 12:00 – 23:00</p>
+                <p>Vie–Sáb: 12:00 – 00:00</p>
+                <p>Dom: 12:00 – 22:00</p>
+            </div>
+           
+                <p style="margin-top:0.5rem;"><i class="far fa-envelope"></i> zamaconajazr@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Sabores del Mundo · <i class="fas fa-heart" style="color:#c49a6c;"></i> Hecho con pasión para los amantes de la buena mesa</p>
+        </div>
+    </footer>
+
+</body>
+</html>
