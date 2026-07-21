@@ -1,486 +1,391 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mis Proyectos Web · Neumorfismo</title>
-    <!-- Font Awesome para iconos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-    <!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mis Proyectos · Morado Profundo</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio | Creador Web</title>
+    <!-- Google Fonts para letra moderna -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
+        /* ============================================
+                   RESET Y ESTILOS GLOBALES
+                   ============================================ */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
         }
 
         body {
+            font-family: 'Poppins', sans-serif;
+            background: #0d0b1a;
+            /* Fondo negro con toque morado */
+            color: #e0d6ff;
             min-height: 100vh;
             display: flex;
             justify-content: center;
-            align-items: center;
-            background: #6c4a8c;
-            padding: 2rem 1rem;
+            padding: 40px 20px;
         }
 
-        /* contenedor principal con efecto neumórfico suave */
+        /* ============================================
+                   CONTENEDOR PRINCIPAL - ANCHO MÁXIMO FIJO
+                   ============================================ */
         .container {
             max-width: 1200px;
+            /* ¡Esto evita que se estire demasiado en monitores grandes! */
             width: 100%;
-            background: #6c4a8c;
-            border-radius: 60px;
-            padding: 2.5rem 2rem;
-            box-shadow: 
-                12px 12px 24px #553a70,
-                -12px -12px 24px #835aa8;
-            transition: all 0.2s ease;
+            background: linear-gradient(145deg, #1a1630, #120f24);
+            border-radius: 32px;
+            padding: 50px 45px;
+            box-shadow: 0 20px 60px rgba(120, 80, 255, 0.25);
+            border: 1px solid rgba(160, 120, 255, 0.15);
+            /* Altura automática, sin duplicar contenido */
+            height: auto;
         }
 
-        /* header */
-        .header {
-            text-align: center;
-            margin-bottom: 3.5rem;
+        /* ============================================
+                   ENCABEZADO
+                   ============================================ */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid rgba(160, 120, 255, 0.2);
         }
 
-        .header h1 {
-            font-size: 3.2rem;
+        .logo h1 {
+            font-size: 4rem;
             font-weight: 700;
-            letter-spacing: -0.5px;
-            color: #f0e6ff;
-            text-shadow: 2px 2px 4px #553a70, -2px -2px 4px #835aa8;
-            display: inline-block;
-            padding: 0 2rem 0.5rem;
-            border-bottom: 4px solid transparent;
-            border-image: linear-gradient(135deg, #835aa8, #f0e6ff) 1;
+            background: linear-gradient(135deg, #b388ff, #7c4dff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .header p {
-            font-size: 1.25rem;
-            color: #e8d5ff;
-            margin-top: 0.8rem;
-            font-weight: 400;
-            background: #6c4a8c;
-            display: inline-block;
-            padding: 0.5rem 2.5rem;
+        .logo span {
+            font-weight: 300;
+            font-size: 0.9rem;
+            color: #a892ff;
+            display: block;
+            -webkit-text-fill-color: #a892ff;
+        }
+
+        .cta-btn {
+            background: linear-gradient(135deg, #7c4dff, #b388ff);
+            color: #fff;
+            border: none;
+            padding: 14px 32px;
             border-radius: 50px;
-            box-shadow: inset 3px 3px 8px #553a70, inset -3px -3px 8px #835aa8;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 8px 25px rgba(124, 77, 255, 0.4);
+            text-decoration: none;
+            display: inline-block;
         }
 
-        /* grid de tarjetas neumórficas */
-        .card-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 2.5rem;
-            margin-top: 1rem;
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(124, 77, 255, 0.6);
         }
 
-        /* cada tarjeta - neumorfismo puro */
-        .card {
-            background: #6c4a8c;
-            border-radius: 48px;
-            padding: 2.2rem 1.8rem 2.5rem;
-            text-align: center;
-            transition: all 0.25s cubic-bezier(0.2, 0.9, 0.4, 1);
-            box-shadow: 
-                9px 9px 18px #553a70,
-                -9px -9px 18px #835aa8;
+        /* ============================================
+                   SECCIÓN "SOBRE MÍ"
+                   ============================================ */
+        .hero {
             display: flex;
             flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            text-decoration: none;
-            color: inherit;
-            border: none;
-            position: relative;
+            gap: 20px;
+            margin-bottom: 50px;
         }
 
-        /* efecto "presionado" al hacer hover (interacción neumórfica) */
-        .card:hover {
-            box-shadow: 
-                4px 4px 10px #553a70,
-                -4px -4px 10px #835aa8,
-                inset 2px 2px 6px #553a70,
-                inset -2px -2px 6px #835aa8;
-            transform: scale(0.98);
-        }
-
-        /* y un efecto sutil al hacer click (activo) */
-        .card:active {
-            box-shadow: 
-                inset 6px 6px 14px #553a70,
-                inset -6px -6px 14px #835aa8;
-            transform: scale(0.95);
-        }
-
-        /* icono circular neumórfico */
-        .card-icon {
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            background: #6c4a8c;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .hero h2 {
             font-size: 2.8rem;
-            color: #f0e6ff;
-            margin-bottom: 1.5rem;
-            box-shadow: 
-                6px 6px 14px #553a70,
-                -6px -6px 14px #835aa8,
-                inset 1px 1px 2px #835aa8,
-                inset -1px -1px 2px #553a70;
-            transition: all 0.2s;
+            font-weight: 700;
+            line-height: 1.2;
         }
 
-        .card:hover .card-icon {
-            box-shadow: 
-                3px 3px 8px #553a70,
-                -3px -3px 8px #835aa8,
-                inset 3px 3px 8px #553a70,
-                inset -3px -3px 8px #835aa8;
+        .hero h2 .highlight {
+            background: linear-gradient(135deg, #b388ff, #7c4dff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .card h3 {
-            font-size: 1.7rem;
-            font-weight: 600;
-            color: #f5ecff;
-            margin-bottom: 0.4rem;
-            letter-spacing: -0.3px;
-        }
-
-        .card p {
-            font-size: 1rem;
-            color: #d4c4e8;
-            margin: 0.3rem 0 1rem;
-            line-height: 1.4;
-            font-weight: 400;
-        }
-
-        .card .badge {
-            display: inline-block;
-            background: #6c4a8c;
-            padding: 0.4rem 1.6rem;
-            border-radius: 40px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            color: #f0e6ff;
-            letter-spacing: 0.3px;
-            margin-top: 0.2rem;
-            box-shadow: inset 2px 2px 5px #553a70, inset -2px -2px 5px #835aa8;
-            transition: 0.2s;
-        }
-
-        .card:hover .badge {
-            box-shadow: inset 1px 1px 3px #553a70, inset -1px -1px 3px #835aa8;
-        }
-
-        /* pie de página con diseño neumórfico */
-        .footer {
-            margin-top: 4rem;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 1.5rem 2.5rem;
-            padding-top: 2rem;
-            border-top: 2px solid rgba(131, 90, 168, 0.3);
-        }
-
-        .footer-item {
-            background: #6c4a8c;
-            padding: 0.7rem 2rem;
-            border-radius: 60px;
-            box-shadow: 4px 4px 10px #553a70, -4px -4px 10px #835aa8;
-            font-weight: 500;
-            color: #f0e6ff;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            transition: 0.2s;
-            cursor: default;
-        }
-
-        .footer-item i {
+        .hero p {
             font-size: 1.2rem;
-            color: #e8d5ff;
+            color: #b8aaff;
+            max-width: 700px;
+            line-height: 1.7;
         }
 
-        .footer-item:hover {
-            box-shadow: inset 4px 4px 10px #553a70, inset -4px -4px 10px #835aa8;
-            transform: scale(0.97);
+        /* ============================================
+                   GALERÍA DE PROYECTOS
+                   ============================================ */
+.projects-title {
+    font-size: 2.5rem; /* Antes: 1.8rem - MÁS GRANDE */
+    font-weight: 700; /* Antes: 600 - MÁS NEGRITA */
+    margin-bottom: 40px; /* Antes: 30px - MÁS ESPACIO */
+    display: flex;
+    align-items: center;
+    gap: 16px; /* Antes: 12px - MÁS ESPACIO */
+}
+
+.projects-title::after {
+    content: '';
+    flex: 1;
+    height: 3px; /* Antes: 2px - MÁS GRUESO */
+    background: linear-gradient(90deg, #7c4dff, transparent);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Antes: 280px - TARJETAS MÁS ANCHAS */
+    gap: 35px; /* Antes: 28px - MÁS ESPACIO ENTRE TARJETAS */
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 24px; /* Antes: 20px - MÁS REDONDEADO */
+    padding: 35px 30px; /* Antes: 28px 24px - MÁS GRANDE */
+    border: 2px solid rgba(160, 120, 255, 0.15); /* Antes: 1px - MÁS GRUESO */
+    transition: transform 0.3s, background 0.3s, border-color 0.3s;
+    backdrop-filter: blur(4px);
+}
+
+.project-card:hover {
+    transform: translateY(-10px); /* Antes: -8px - MÁS ELEVACIÓN */
+    background: rgba(124, 77, 255, 0.12); /* Antes: 0.1 - MÁS OPACIDAD */
+    border-color: #7c4dff;
+}
+
+.project-card h3 {
+    font-size: 1.8rem; /* Antes: 1.4rem - MÁS GRANDE */
+    font-weight: 700; /* Antes: 600 - MÁS NEGRITA */
+    color: #d4c4ff;
+    margin-bottom: 14px; /* Antes: 10px - MÁS ESPACIO */
+}
+
+.project-card p {
+    color: #b0a0e0;
+    font-size: 1.1rem; /* Antes: 0.95rem - MÁS GRANDE */
+    line-height: 1.7; /* Antes: 1.6 - MÁS ESPACIADO */
+    margin-bottom: 22px; /* Antes: 18px - MÁS ESPACIO */
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Antes: 8px - MÁS ESPACIO */
+    margin-bottom: 24px; /* Antes: 20px - MÁS ESPACIO */
+}
+
+.project-tags span {
+    background: rgba(124, 77, 255, 0.2);
+    padding: 6px 18px; /* Antes: 4px 14px - MÁS GRANDE */
+    border-radius: 24px; /* Antes: 20px - MÁS REDONDEADO */
+    font-size: 0.85rem; /* Antes: 0.75rem - MÁS GRANDE */
+    font-weight: 700; /* Antes: 600 - MÁS NEGRITA */
+    color: #b388ff;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(124, 77, 255, 0.2);
+}
+
+.project-link {
+    color: #b388ff;
+    text-decoration: none;
+    font-weight: 700; /* Antes: 600 - MÁS NEGRITA */
+    font-size: 1.1rem; /* Antes: 0.95rem - MÁS GRANDE */
+    display: inline-flex;
+    align-items: center;
+    gap: 10px; /* Antes: 8px - MÁS ESPACIO */
+    transition: color 0.3s, gap 0.3s;
+}
+
+.project-link:hover {
+    color: #d4c4ff;
+    gap: 18px; /* Antes: 14px - MÁS ESPACIO */
+}
+
+.project-link::after {
+    content: '→';
+    font-size: 1.5rem; /* Antes: 1.2rem - FLECHA MÁS GRANDE */
+}
+        /* ============================================
+                   PIE DE PÁGINA
+                   ============================================ */
+        footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(160, 120, 255, 0.15);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            color: #7a6aad;
+            font-size: 0.9rem;
         }
 
-        .footer a {
+        .social-links {
+            display: flex;
+            gap: 18px;
+        }
+
+        .social-links a {
+            color: #7a6aad;
             text-decoration: none;
-            color: #f0e6ff;
+            transition: color 0.3s;
+            font-weight: 500;
         }
 
-        /* responsivo */
-        @media (max-width: 600px) {
+        .social-links a:hover {
+            color: #b388ff;
+        }
+
+        /* ============================================
+                   RESPONSIVE: se ajusta a pantallas pequeñas
+                   ============================================ */
+        @media (max-width: 768px) {
             .container {
-                padding: 1.8rem 1.2rem;
+                padding: 30px 20px;
+                border-radius: 20px;
             }
-            .header h1 {
-                font-size: 2.4rem;
-            }
-            .card-grid {
-                gap: 1.8rem;
-            }
-            .card {
-                padding: 1.8rem 1.2rem;
-            }
-            .footer {
+
+            header {
                 flex-direction: column;
-                align-items: center;
+                align-items: flex-start;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                /* En móvil, una columna */
+            }
+
+            .projects-title {
+                font-size: 1.4rem;
+            }
+
+            footer {
+                flex-direction: column;
+                text-align: center;
             }
         }
 
-        /* pequeño detalle: enlace invisible para que toda la card sea clickeable */
-        .card-link {
-            display: contents;
+        /* ============================================
+                   PARA PANTALLAS GIGANTES (>= 1600px)
+                   ============================================ */
+        @media (min-width: 1600px) {
+            body {
+                padding: 60px 40px;
+            }
+
+            .container {
+                max-width: 1400px;
+                /* Un poco más ancho pero controlado */
+                padding: 60px 70px;
+            }
+
+            .projects-grid {
+                grid-template-columns: repeat(3, 1fr);
+                /* 3 columnas fijas en pantallas enormes */
+            }
+
+            .hero h2 {
+                font-size: 3.4rem;
+            }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
+    <div class="container">
 
-    <!-- Encabezado -->
-    <div class="header">
-        <h1>✦ Mis Proyectos</h1>
-        <p><i class="fas fa-cube" style="margin-right: 10px;"></i>  neumorfismo · morado profundo</p>
-    </div>
-
-    <!-- Grid de tarjetas -->
-    <div class="card-grid">
-
-        <!-- TARJETA 1 -->
-        <a href="#" class="card-link" target="_blank">
-            <div class="card">
-                <div class="card-icon">
-                    <i class="fas fa-globe-americas"></i>
-                </div>
-                <h3>WebStudio</h3>
-                <p>Landing creativa para agencias</p>
-                <span class="badge">➜ Visitar</span>
+        <!-- ====== ENCABEZADO ====== -->
+        <header>
+            <div class="logo">
+                <h1>Tlalling</h1>
+                <span>Creador de páginas web</span>
             </div>
-        </a>
+            <a href="contactanos.html" class="cta-btn">Contactame</a>
+        </header>
 
-        <!-- TARJETA 2 -->
-        <a href="#" class="card-link" target="_blank">
-            <div class="card">
-                <div class="card-icon">
-                    <i class="fas fa-store"></i>
+        <!-- ====== HERO ====== -->
+        <section class="hero">
+            <h2>
+                Transformo ideas en<br>
+                <span class="highlight">experiencias digitales</span>
+            </h2>
+            <p>
+                Hago páginas web modernas, rápidas y con un diseño único.
+                Mira algunos de mis proyectos y <strong>contacta conmigo</strong> para el tuyo.
+            </p>
+        </section>
+
+        <!-- ====== PROYECTOS ====== -->
+        <h2 class="projects-title">Mis proyectos</h2>
+
+        <div class="projects-grid">
+            <!-- Tarjeta 1 -->
+            <div class="project-card">
+                <h3>Landing Page</h3>
+                <p>Página de presentación para un negocio local. Diseño limpio y conversión optimizada.</p>
+                <div class="project-tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JS</span>
                 </div>
-                <h3>MarketPro</h3>
-                <p>E-commerce minimalista</p>
-                <span class="badge">➜ Visitar</span>
+                <a href="ecomerce.html" class="project-link">Visitar</a>
             </div>
-        </a>
 
-        <!-- TARJETA 3 -->
-        <a href="#" class="card-link" target="_blank">
-            <div class="card">
-                <div class="card-icon">
-                    <i class="fas fa-blog"></i>
+            <!-- Tarjeta 2 -->
+            <div class="project-card">
+                <h3>Pagina Con BD para aspirantes a Postgrados</h3>
+                <p>TECNM.</p>
+                <div class="project-tags">
+                    <span>React</span>
+                    <span>CSS</span>
+                    <span>API</span>
                 </div>
-                <h3>BlogNova</h3>
-                <p>Magazine digital con estilo</p>
-                <span class="badge">➜ Visitar</span>
+                <a href="https://jazr.magycel.com/b/" class="project-link">Visitar</a>
             </div>
-        </a>
 
-        <!-- TARJETA 4 -->
-        <a href="#" class="card-link" target="_blank">
-            <div class="card">
-                <div class="card-icon">
-                    <i class="fas fa-code"></i>
+            <!-- Tarjeta 3 -->
+            <div class="project-card">
+                <h3>PAGINA DE REPARACION DE EQUIPOS</h3>
+                <p>Pagina con un Encabezado Vertical.</p>
+                <div class="project-tags">
+                    <span>Vue</span>
+                    <span>Chart.js</span>
+                    <span>CSS</span>
                 </div>
-                <h3>DevPortfolio</h3>
-                <p>Portafolio para desarrolladores</p>
-                <span class="badge">➜ Visitar</span>
+                <a href="https://jazr.magycel.com/z/p10/index.html" class="project-link">Visitar</a>
             </div>
-        </a>
-
-        <!-- TARJETA 5 -->
-        <a href="#" class="card-link" target="_blank">
-            <div class="card">
-                <div class="card-icon">
-                    <i class="fas fa-paint-brush"></i>
-                </div>
-                <h3>ArtGallery</h3>
-                <p>Exposición de arte digital</p>
-                <span class="badge">➜ Visitar</span>
-            </div>
-        </a>
-
-        <!-- TARJETA 6 -->
-        <a href="#" class="card-link" target="_blank">
-            <div class="card">
-                <div class="card-icon">
-                    <i class="fas fa-camera"></i>
-                </div>
-                <h3>FotoFrame</h3>
-                <p>Galería de fotografía</p>
-                <span class="badge">➜ Visitar</span>
-            </div>
-        </a>
-
-    </div>
-
-    <!-- Footer -->
-    <div class="footer">
-        <div class="footer-item">
-            <i class="fas fa-layer-group"></i> 6 proyectos activos
         </div>
-        <div class="footer-item">
-            <i class="fas fa-sync-alt"></i> actualización constante
-        </div>
-        <a href="#" style="text-decoration: none;">
-            <div class="footer-item">
-                <i class="fas fa-plus-circle"></i> ver todos
+
+        <!-- ====== FOOTER ====== -->
+        <footer>
+            <span> 2026 — Hecho con 💜</span>
+            <div class="social-links">
+                <a href="#">LinkedIn</a>
+                <a href="#">Twitter</a>
             </div>
-        </a>
-    </div>
-
-</div>
-
-<script>
-    document.querySelectorAll('.card-link').forEach(link => {
-        link.addEventListener('click', (e) => {
-            if (link.getAttribute('href') === '#') {
-                e.preventDefault();
-                alert('🔗 Aquí iría tu página web. Cambia el href por tu URL.');
-            }
-        });
-    });
-</script>
-
-</body>
-</html>
-</head>
-<body>
-
-<div class="container">
-
-    <!-- Encabezado -->
-    <div class="header">
-        <h1>✦ Mis Proyectos Personnales</h1>
-        <p><i class="fas fa-cube" style="margin-right: 10px;"></i>  neumorfismo · diseño suave</p>
-    </div>
-
-    <!-- Grid de tarjetas (promociona tus páginas) -->
-    <div class="card-grid">
-
-        <!-- TARJETA 1 -->
-        <a href="#" class="card-link" target="_blank">
-            <div class="card">
-                <div class="card-icon">
-                    <i class="fas fa-globe-americas"></i>
-                </div>
-                <h3>WebStudio</h3>
-                <p>Landing creativa para agencias</p>
-                <span class="badge">➜ Visitar</span>
-            </div>
-        </a>
-
-        <!-- TARJETA 2 -->
-        <a href="#" class="card-link" target="_blank">
-            <div class="card">
-                <div class="card-icon">
-                    <i class="fas fa-store"></i>
-                </div>
-                <h3>MarketPro</h3>
-                <p>E-commerce minimalista</p>
-                <span class="badge">➜ Visitar</span>
-            </div>
-        </a>
-
-        <!-- TARJETA 3 -->
-        <a href="#" class="card-link" target="_blank">
-            <div class="card">
-                <div class="card-icon">
-                    <i class="fas fa-blog"></i>
-                </div>
-                <h3>BlogNova</h3>
-                <p>Magazine digital con estilo</p>
-                <span class="badge">➜ Visitar</span>
-            </div>
-        </a>
-
-        <!-- TARJETA 4 -->
-        <a href="#" class="card-link" target="_blank">
-            <div class="card">
-                <div class="card-icon">
-                    <i class="fas fa-code"></i>
-                </div>
-                <h3>DevPortfolio</h3>
-                <p>Portafolio para desarrolladores</p>
-                <span class="badge">➜ Visitar</span>
-            </div>
-        </a>
-
-        <!-- TARJETA 5 (extra) -->
-        <a href="#" class="card-link" target="_blank">
-            <div class="card">
-                <div class="card-icon">
-                    <i class="fas fa-paint-brush"></i>
-                </div>
-                <h3>ArtGallery</h3>
-                <p>Exposición de arte digital</p>
-                <span class="badge">➜ Visitar</span>
-            </div>
-        </a>
-
-        <!-- TARJETA 6 (extra) -->
-        <a href="#" class="card-link" target="_blank">
-            <div class="card">
-                <div class="card-icon">
-                    <i class="fas fa-camera"></i>
-                </div>
-                <h3>FotoFrame</h3>
-                <p>Galería de fotografía</p>
-                <span class="badge">➜ Visitar</span>
-            </div>
-        </a>
+        </footer>
 
     </div>
-
-    <!-- Footer con info adicional (también estilo neumórfico) -->
-    <div class="footer">
-        <div class="footer-item">
-            <i class="fas fa-layer-group"></i> 6 proyectos activos
-        </div>
-        <div class="footer-item">
-            <i class="fas fa-sync-alt"></i> actualización constante
-        </div>
-        <a href="#" style="text-decoration: none;">
-            <div class="footer-item">
-                <i class="fas fa-plus-circle"></i> ver todos
-            </div>
-        </a>
-    </div>
-
-</div>
-
-<!-- (Opcional) JS para que los enlaces # no recarguen la página, solo demo -->
-<script>
-    document.querySelectorAll('.card-link').forEach(link => {
-        link.addEventListener('click', (e) => {
-            if (link.getAttribute('href') === '#') {
-                e.preventDefault();
-                alert('🔗 Aquí iría tu página web. Cambia el href por tu URL.');
-            }
-        });
-    });
-</script>
 
 </body>
 </html>
